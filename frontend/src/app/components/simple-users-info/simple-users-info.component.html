@@ -1,0 +1,8 @@
+<div *ngFor="let passenger of passengers">
+  <app-simple-user-info
+    [name]="passenger.name"
+    [surname]="passenger.surname"
+    [email]="passenger.email"
+    [img]="passenger.profilePicture"
+  ></app-simple-user-info>
+</div>

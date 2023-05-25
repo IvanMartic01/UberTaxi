@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navbar">
+    <img src="src/assets/taxi.png" (click) = "openHomePage()" class="logo"/>
+    <span>GoGoCarJet</span>
+    
+    <div class="spacer">
+
+    </div>
+
+    <a mat-button class="navbar-item" (click)="openRideHistory()">Ride history</a>
+    <a mat-button class="navbar-item" (click)="openPassengersList()">Passengers</a>
+    <a mat-button class="navbar-item" (click)="openDriversList()">Drivers</a>
+    <a mat-button class="navbar-item" (click)="openReportCharts()">Charts</a>
+    <a mat-button class="navbar-item" (click)="openChat()">Chat</a>
+    <a mat-button class="navbar-item" (click)="logout()">Log out</a>
+    <div class = "navbar-item notification">
+        <img mat-button src="src/assets/images/notifications.png" class="notification-img" (click)="changeState()">
+        <p id = "notificationNumber">{{numberOfUnreviewedMessages}}</p>
+    </div>
+    <div *ngIf = "showPanic == true" id="notificationsList">
+        <app-panic-review (unreviewedMessagesNumberEvent)="setNumberOfUnreviewedMessages($event)"></app-panic-review>
+    </div>
+</mat-toolbar>

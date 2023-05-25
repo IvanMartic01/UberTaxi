@@ -1,0 +1,73 @@
+#current-ride-grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width: 100%;
+    height: 92vh;
+}
+
+#driver-map-container {
+    margin: 2vh 1vw;
+}
+
+#ride-information {
+    border: 2px dashed rgb(190, 190, 190);
+    padding: 2vh 1vw;
+    border-radius: 15px;
+    overflow-y: scroll;
+    margin: 5vh 1vw;
+}
+
+#button-layout {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 4vh 0;
+}
+
+#button-layout button {
+    font-size: 1.25vw;
+    width: 40%;
+    height: 7vh;
+}
+
+#button-layout tr td {
+    padding: 1vh 1vw;
+}
+
+.open-chat-button {
+    width: 100%;
+    padding: 4vh 2vw;
+    font-size: 1.25vw;
+}
+
+#route-completion-info {
+    font-size: 1vw;
+    margin-top: 10vh;
+}
+
+.panic-submition {
+    margin: 5vh 0;
+    width: 100%;
+    display: none;
+}
+
+.panic-submition span {
+    font-size: 1vw;
+}
+
+.panic-reason {
+    width: 100%;
+    height: 15vh;
+    resize: none;
+}
+
+.panic-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.panic-buttons button {
+    padding: 3vh 0;
+    margin: 1vh 1vw;
+    font-size: 1vw;
+}

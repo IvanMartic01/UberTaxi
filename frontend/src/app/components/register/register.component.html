@@ -1,0 +1,118 @@
+<div id="side-img-container">
+    <img [src]="mainImagePath" id="main-image" />
+    <span id="side-img-message">A few clicks away from creating your Go Go CarJet account</span>
+
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="createAccount()">
+    <h1>Register</h1>
+    <table>
+        <tr>
+            <td>
+                <mat-form-field id = "name" [ngClass]="'form-text-field'">
+                    <mat-label>Name</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="name"
+                        required
+                        formControlName="name"
+                        />
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field id = "surname" [ngClass]="'form-text-field'">
+                <mat-label>Surname</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="surname"
+                        required
+                        formControlName="surname"
+                        />
+                </mat-form-field>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field id = "telephoneNumber" [ngClass]="'form-text-field'">
+                    <mat-label>Telephone number</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="telephoneNumber"
+                        required
+                        formControlName="telephoneNumber"
+                        />
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field id = "email" [ngClass]="'form-text-field'">
+                    <mat-label>Email</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="email"
+                        required
+                        formControlName="email"
+                        />
+                </mat-form-field>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field id = "adress" [ngClass]="'form-text-field'">
+                    <mat-label>Address</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        name="address"
+                        required
+                        formControlName="address"
+                        />
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field id = "password" [ngClass]="'form-text-field'">
+                    <mat-label>Password</mat-label>
+                    <input
+                        matInput
+                        type="password"
+                        name="password"
+                        required
+                        formControlName="password"
+                        />
+                </mat-form-field>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field id = "confirmPassword" [ngClass]="'form-text-field'">
+                    <mat-label>Confirm password</mat-label>
+                    <input
+                        matInput
+                        type="password"
+                        name="repeatedPassword"
+                        required
+                        formControlName="confirmPassword"
+                        />
+                </mat-form-field>
+            </td>
+            <td rowspan="2">
+                <img [src]="taxiIconPath" id="taxi-icon" (click)="goToHome()"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-error *ngIf="errorMessage != ''">{{errorMessage}}</mat-error>
+                <button 
+                    type="submit"
+                    mat-raised-button color="primary">
+                    Create account
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>

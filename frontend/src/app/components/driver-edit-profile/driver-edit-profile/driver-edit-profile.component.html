@@ -1,0 +1,59 @@
+<div class="center-form">
+  <app-document-upload-form
+    *ngIf="shouldUploadFormBeDisplayed"
+    (closeUploadFormEventEmitter)="closeForm()"
+    (addDocumentEventEmitter)="addDocument($event)"
+  ></app-document-upload-form>
+</div>
+
+<div *ngIf="profileInfo" class="wrapper">
+  <div class="left">
+    <img src="{{ displayedProfileImage }}" alt="user" />
+    <div class="name-img-container">
+      <mat-icon (click)="file.click()">add_a_photo</mat-icon>
+      <div style="padding-left: 26%">
+        <h4>{{ driver.name }} {{ driver.surname }}</h4>
+        <p>Driver</p>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="info">
+      <h3>Edit Profile</h3>
+    </div>
+
+    <div>
+      <app-edit-profile-form
+        (changePasswordEvent)="changePassword()"
+        (displayDocumentsEvent)="displayDocuments()"
+        (updateProfileEventEmitter)="updateProfile()"
+        [displayDriverUI]="true"
+        [user]="driver"
+      ></app-edit-profile-form>
+    </div>
+  </div>
+</div>
+
+<app-card-document
+  *ngIf="shouldDocumentsBeDisplayed"
+  (closeDocumentsEventEmitter)="closeDocuments($event)"
+  [documents]="documents"
+>
+</app-card-document>
+<div class="buttons-delete-upload">
+  <app-custom-btn1
+    (click)="displayForm()"
+    [content]="'Upload'"
+    [customColor]="'btn-blue'"
+    *ngIf="shouldDocumentsBeDisplayed"
+  ></app-custom-btn1>
+</div>
+<input
+  type="file"
+  name="document-file"
+  accept=".jpg,.png,.jpeg"
+  id="fileID"
+  style="display: none"
+  (change)="onProfileImageSelected($event)"
+  #file
+/>

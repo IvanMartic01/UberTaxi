@@ -1,0 +1,14 @@
+form {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 3vh 1vw;
+    font-size: 1.25vw;
+
+}
+
+.search-location-input {
+    width: 100%;
+}

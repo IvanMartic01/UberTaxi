@@ -1,0 +1,36 @@
+#map-and-rides-grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width: 100%;
+    height: 92vh;
+}
+
+#driver-map-container {
+    margin: 2vh 1vw;
+}
+
+#scheduled-rides {
+    overflow-y: scroll;
+    border-radius: 2vmin;
+    margin: 5vh 1vw;
+    border: 2px dashed rgb(190, 190, 190);
+}
+
+.no-rides-header {
+    text-align: center;
+    width: 100%;
+    color: rgb(110, 110, 110);
+    margin-top: 5vh;
+}
+
+.current-ride-redirect {
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    margin: 5vh 0;
+}
+
+.current-ride-redirect:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
